@@ -1,26 +1,40 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <Navbar />
+    <MobileNavbar />
+    <!-- <Home /> -->
+    <div class="pt-0 md:pt-20 max-w-5xl mx-auto">
+      <div class="flex md:flex-row flex-col  items-center space-x-0 md:space-x-24">
+      <SneakerImage />
+      <SneakerCompany />
+      </div>
+    </div>
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Navbar from "./components/layout/Navbar.vue";
+import SneakerImage from "./components/SneakerImage.vue";
+import SneakerCompany from "./components/SneakerCompany.vue";
+import MobileNavbar from "./components/layout/MobileNavbar.vue";
+// import Home from "./components/pages/Home.vue";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
+    Navbar,
+    SneakerImage,
+    SneakerCompany,
+    MobileNavbar,
+    // Home
+  },
+  data() {
+    return {
+      show: true
+    };
   }
-}
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>

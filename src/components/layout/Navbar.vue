@@ -4,13 +4,13 @@
       <!-- left nav -->
       <div class="flex space-x-10 items-center">
         <div class="text-4xl font-bold flex md:block items-center space-x-2">
-          <router-link to>Sneakers</router-link>
-        </div>
+          <a href="#">Sneakers</a>
+       </div>
         <div class="md:flex space-x-10 items-center hidden" v-for="link in links" :key="link.id">
           <ul>
           <li class="hover:text-yellow-600 py-4" >
-            <router-link :to="'/' + link.name" class="">{{link.name}}</router-link>
-          </li>
+            <a :href="'/' + link.name" class="">{{link.name}}</a>
+        </li>
         </ul>
         </div>
       </div>
@@ -34,7 +34,7 @@
           </svg>
         </a>
         <div>
-          <div class="h-12 w-12 rounded-full bg-yellow-600"></div>
+          <img src="../../assets/images/me.jpg" class="h-12 w-12 rounded-full bg-yellow-600" />
         </div>
       </div>
     </div>
@@ -43,8 +43,6 @@
 </template>
 
 <script>
-import { exportDefaultSpecifier } from "@babel/types";
-
 export default {
   name: "Navbar",
   data() {
@@ -59,11 +57,6 @@ export default {
       ]
     };
   },
-  methods: {
-    navigate() {
-      this.$router.push("/" + this.links.name);
-    }
-  }
 };
 </script>
 

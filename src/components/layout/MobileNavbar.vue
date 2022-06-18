@@ -3,8 +3,8 @@
     <div class="flex justify-between py-6 px-2">
       <div class="flex flex-row-reverse gap-x-2">
         <div class="text-2xl font-bold">
-          <router-link to>Sneakers</router-link>
-        </div>
+          <a href="#">Sneakers</a>
+     </div>
         <button class="items-center" @click="show=!show">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +36,7 @@
           </svg>
         </a>
         <div>
-          <div class="h-8 w-8 md:h-12 md:w-12 rounded-full bg-yellow-600"></div>
+          <img src="../../assets/images/me.jpg" class="h-8 w-8 md:h-12 md:w-12 rounded-full bg-yellow-600" />
         </div>
       </div>
     </div>
@@ -44,8 +44,8 @@
       <div class="flex flex-col" v-for="link in links" :key="link.id">
         <ul>
           <li class="hover:text-yellow-600 py-4">
-            <router-link :to="'/' + link.name" class="  px-4">{{link.name}}</router-link>
-          </li>
+            <a :href="'/' + link.name" class="  px-4">{{link.name}}</a>
+       </li>
         </ul>
       </div>
     </div>
@@ -55,7 +55,7 @@
 export default {
   data() {
     return {
-      show: true,
+      show: false,
       links: [
         { id: 1, name: "collections" },
         { id: 2, name: "men" },
